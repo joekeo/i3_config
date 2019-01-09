@@ -156,10 +156,16 @@ bar {
 }
 
 #personal keybindings for opening programs
+#>google chrome
 bindsym $mod+n exec google-chrome
+#>file navigation
 bindsym $mod+b exec nautilus
-	#this one ios to set layouts of monitors
-bindsym $MOD+m exec arandr
+
+#this one ios to set layouts of monitors
+bindsym $mod+m exec arandr
+#arduino IDE
+bindsym $mod+Shift+a exec ./arduino-1.8.8/arduino
+
 
 #startprograms on startup
 exec --no-startup-id nm-applet
