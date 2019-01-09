@@ -1,11 +1,12 @@
 #!/bin/bash
 lock() {
-    i3lock
+    i3lock -c550000
+
 }
 
 case "$1" in
     lock)
-        lock && xset dpms force off
+        i3lock -c550000
         ;;
     logout)
         i3-msg exit
