@@ -102,7 +102,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace 10:Git
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -222,14 +222,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86Display exec arandr
 
 #screenshot app
-bindsym Print exec shutter
+bindsym Print exec shutter -s
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
 
 #open gitkraken in ws 10 without getting in the way
 bindsym $mod+g exec gitkraken
-assign [class="GitKraken"] 10
+assign [class="GitKraken"] 10:Git
 
 # Test shell script
 #bindsym $mod+p exec ~/.config/i3/test.sh # toggle touchpad
