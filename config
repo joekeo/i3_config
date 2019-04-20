@@ -125,7 +125,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -167,7 +167,7 @@ bindsym $mod+n exec google-chrome
 bindsym $mod+b exec nautilus
 
 #this one ios to set layouts of monitors
-bindsym $mod+m exec arandr
+#bindsym $mod+m exec arandr
 
 #arduino IDE
 bindsym $mod+Shift+a exec ./arduino-1.8.8/arduino
@@ -207,17 +207,25 @@ bindsym $mod+Escape mode "$mode_system"
 
 exec --no-startup-id feh --bg-max ~/Pictures/wp.jpg
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
+# Pulse Audio controls #check the name of the device 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute  alsa_output.pci-0000_00_1b.0.analog-stereo 0;;exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute  alsa_output.pci-0000_00_1b.0.analog-stereo 0; exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute  alsa_output.pci-0000_00_1b.0.analog-stereo toggle # mute sound
-
-# Sreen brightness controls
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle
+# Sreen brightness controls #sudo apt install xbacklight
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+#display manager
+bindsym XF86Display exec arandr
+
+#screenshot app
+bindsym Print exec shutter
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
+
+bindsym $mod+g exec gitkraken
+assign [class="GitKraken"] 10
 
 # Test shell script
 bindsym $mod+p exec ~/.config/i3/test.sh # toggle touchpad
