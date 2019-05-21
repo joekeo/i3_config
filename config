@@ -30,7 +30,9 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
+# start temrinator
+bindsym $mod+shift+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -260,5 +262,5 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id syndaemon -i 0.4 -k -R -t
 
-exec --no-startup-id "compton -b"
+#1exec --no-startup-id "compton -b"
 
