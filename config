@@ -262,5 +262,5 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id syndaemon -i 0.4 -k -R -t
 
-#1exec --no-startup-id "compton -b"
+exec --no-startup-id "compton -b"
 
