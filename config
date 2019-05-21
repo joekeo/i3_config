@@ -164,7 +164,7 @@ bar {
 bindsym $mod+n exec google-chrome
 
 #>file navigation
-bindsym $mod+b exec nautilus
+bindsym $mod+b exec nautilus --new-window
 
 #this one ios to set layouts of monitors
 #bindsym $mod+m exec arandr
@@ -260,5 +260,5 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id syndaemon -i 0.4 -k -R -t
 
-
+exec --no-startup-id "compton -b"
 
