@@ -183,8 +183,13 @@ bindsym $mod+minus scratchpad show
 # Move the scratchpad window to the workspace
 bindsym $mod+Shift+equal floating toggle
 
+bindsym $mod+BackSpace [class="Simplenote"] scratchpad show
+
 #startprograms on startup
 exec --no-startup-id nm-applet
+exec --no-startup-id simplenote
+for_window [class="Simplenote"] move scratchpad
+
 
 
 #mode and shortcut to sleep the mahine or power off and such
@@ -223,10 +228,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 #display manager
 bindsym XF86Display exec arandr
 
-#3_screen VL
+#3_screen  LV
 #          L
-bindsym Shift+XF86Display exec xrandr --output HDMI-2 --mode 1920x1080 --pos 1080x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 1080x1080 --rotate normal --output DP-2 --off; exec --no-startup-id feh --bg-max ~/.config/i3/wp_h.jpg ~/.config/i3/wp_v.jpg ~/.config/i3/wp_h.jpg
-
+#bindsym Shift+XF86Display exec xrandr --output HDMI-2 --mode 1920x1080 --pos 1080x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 1080x1080 --rotate normal --output DP-2 --off; exec --no-startup-id feh --bg-max ~/.config/i3/wp_h.jpg ~/.config/i3/wp_v.jpg ~/.config/i3/wp_h.jpg
+bindsym Shift+XF86Display exec xrandr --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-1 --mode 1920x1080 --pos 0x224 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x1304 --rotate normal --output DP-2 --off
 #2_screen L
 #         L
 bindsym ctrl+XF86Display exec xrandr --output HDMI-2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-2 --off; exec feh --no-startup-id --bg-max ~/.config/i3/wp_h.jpg
@@ -262,5 +267,5 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id syndaemon -i 0.4 -k -R -t
 
-exec --no-startup-id "compton -b"
+#exec --no-startup-id "compton -b"
 
